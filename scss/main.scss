@@ -2,20 +2,24 @@
 @import "susy";
 @import "breakpoint";
 @import "compass";
+@import "screensizes";
+@import "fonts";  
 
 
 
-
-
+//Define Suzy grid system
 $susy: (
   columns: 12,
- // debug: (image: show),
+  //debug: (image: show),
+  //toggle: top-right,
   global-box-sizing: border-sizing
 );
 
+
+
 @include border-box-sizing;
 
-$medium-screen: 720px;
+
 $link-color: #330000;
 
 a {
@@ -26,35 +30,76 @@ a {
   }
 }
 
+
+
+// This is a Suzy Mixin that defines the container width
 .container {
   @include container(1140px);
+  font-family: $body-font;
+
 }
 
-.sidebar-left {
-  height: 80vh;
-  background-color: rgba(0, 100, 100, 0.6);
+
+
+// Defining the header, need to consider the Hamburger menu for different resolutions
+.header{
+  //background-color: rgba(0, 100, 100, 0.6);
+  height: 70px;
+
+  .hamburger-mobile{
+    @include breakpoint($tablets){
+      display: none;
+    }
+  }
+
+  .hamburger-tablet{
+    @include breakpoint($mobile){
+      display: none;
+    }
+    @include breakpoint($tablets){
+      @include span (4 of 12 last);
+      text-align: right;
+      display: block;
+    }
+    @include breakpoint($desktop-screen){
+      display: none;
+    }
+  }
+
+
+  .logo{
+      @include span (8 of 12);  
+      font-family: $header-font;
+      font-size: 3.2em;
+      font-weight: 700;
+      letter-spacing: -2px;
+  }
+
+  .nav{
   display: none;
 
-  @include breakpoint($medium-screen) {
-    display: block;
-    @include span(2 of 16);
+  
+  @include breakpoint($desktop-screen){
+      @include span (4 of 12 last);
+      display: block;
+      text-align: right;
+    }
   }
 }
+
+
 
 .main {
   height: 80vh;
 
-  @include breakpoint($medium-screen) {
-    @include span(10 of 16);
+  @include breakpoint($desktop-screen) {
+    @include span(12 of 12);
   }
 
   .content {
     overflow: auto;
-    height: 60vh;
-    padding: 3 * gutter();
-    background-color: rgba(100, 0, 0, 0.6);
-    @include text-shadow(#aaa 0 1px 0);
-    @include column-count(3);
+    //height: 60vh;
+    //background-color: rgba(100, 0, 0, 0.6);
 
     p {
       margin-top: 0;
@@ -70,29 +115,26 @@ a {
     @include box-shadow(rgb(85, 25, 85) 0 0 5px);
     @include border-radius(6px);
 
-    @include breakpoint($medium-screen) {
-      @include span(2 of 10);
+    @include breakpoint($desktop-screen) {
+      @include span(4 of 12);
 
-      &:nth-child(5n) {
+      &:nth-child(3n) {
         @include last;
       }
     }
   }
 }
 
-.sidebar-right {
-  height: 80vh;
-  background-color: rgba(100, 100, 30, 0.6);
-  clear: both;
 
-  @include breakpoint($medium-screen) {
-    clear: none;
-    @include span(4 of 16 last);
-  }
-}
-
-.footer {
-  height: 20vh;
+.footer { 
+  height: 10vh;
   background-color: rgba(0, 30, 100, 0.6);
   clear: both;
+  display: block;
+}
+
+.header {
+  height: 10vh;
+  background-color: rgba(0, 30, 100, 0.6);
+  display: block;
 }

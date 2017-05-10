@@ -3,6 +3,7 @@
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Poppins");
 /* line 8, ../scss/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -451,20 +452,21 @@ textarea {
   box-sizing: border-box;
 }
 
-/* line 21, ../scss/main.scss */
+/* line 25, ../scss/main.scss */
 a {
   color: #330000;
 }
-/* line 24, ../scss/main.scss */
+/* line 28, ../scss/main.scss */
 a:hover {
   color: #b30000;
 }
 
-/* line 29, ../scss/main.scss */
+/* line 36, ../scss/main.scss */
 .container {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
+  font-family: "Inconsolata", monospace;
 }
 /* line 12, ../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .container:after {
@@ -473,50 +475,85 @@ a:hover {
   clear: both;
 }
 
-/* line 33, ../scss/main.scss */
-.sidebar-left {
-  height: 80vh;
-  background-color: rgba(0, 100, 100, 0.6);
+/* line 45, ../scss/main.scss */
+.header {
+  height: 70px;
+}
+@media (min-width: 710px) {
+  /* line 49, ../scss/main.scss */
+  .header .hamburger-mobile {
+    display: none;
+  }
+}
+@media (min-width: 320px) {
+  /* line 55, ../scss/main.scss */
+  .header .hamburger-tablet {
+    display: none;
+  }
+}
+@media (min-width: 710px) {
+  /* line 55, ../scss/main.scss */
+  .header .hamburger-tablet {
+    width: 32.20339%;
+    float: right;
+    margin-right: 0;
+    text-align: right;
+    display: block;
+  }
+}
+@media (min-width: 960px) {
+  /* line 55, ../scss/main.scss */
+  .header .hamburger-tablet {
+    display: none;
+  }
+}
+/* line 70, ../scss/main.scss */
+.header .logo {
+  width: 66.10169%;
+  float: left;
+  margin-right: 1.69492%;
+  font-family: "Poppins", sans-serif;
+  font-size: 3.2em;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+/* line 78, ../scss/main.scss */
+.header .nav {
   display: none;
 }
-@media (min-width: 720px) {
-  /* line 33, ../scss/main.scss */
-  .sidebar-left {
+@media (min-width: 960px) {
+  /* line 78, ../scss/main.scss */
+  .header .nav {
+    width: 32.20339%;
+    float: right;
+    margin-right: 0;
     display: block;
-    width: 11.39241%;
-    float: left;
-    margin-right: 1.26582%;
+    text-align: right;
   }
 }
 
-/* line 44, ../scss/main.scss */
+/* line 92, ../scss/main.scss */
 .main {
   height: 80vh;
 }
-@media (min-width: 720px) {
-  /* line 44, ../scss/main.scss */
+@media (min-width: 960px) {
+  /* line 92, ../scss/main.scss */
   .main {
-    width: 62.02532%;
+    width: 100%;
     float: left;
-    margin-right: 1.26582%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
-/* line 51, ../scss/main.scss */
+/* line 99, ../scss/main.scss */
 .main .content {
   overflow: auto;
-  height: 60vh;
-  padding: 5.08475%;
-  background-color: rgba(100, 0, 0, 0.6);
-  text-shadow: #aaa 0 1px 0;
-  -moz-column-count: 3;
-  -webkit-column-count: 3;
-  column-count: 3;
 }
-/* line 59, ../scss/main.scss */
+/* line 104, ../scss/main.scss */
 .main .content p {
   margin-top: 0;
 }
-/* line 64, ../scss/main.scss */
+/* line 109, ../scss/main.scss */
 .main .teaser {
   height: 16vh;
   background-color: rgba(100, 30, 100, 0.6);
@@ -533,39 +570,31 @@ a:hover {
   -webkit-border-radius: 6px;
   border-radius: 6px;
 }
-@media (min-width: 720px) {
-  /* line 64, ../scss/main.scss */
+@media (min-width: 960px) {
+  /* line 109, ../scss/main.scss */
   .main .teaser {
-    width: 18.36735%;
+    width: 32.20339%;
     float: left;
-    margin-right: 2.04082%;
+    margin-right: 1.69492%;
   }
-  /* line 76, ../scss/main.scss */
-  .main .teaser:nth-child(5n) {
+  /* line 121, ../scss/main.scss */
+  .main .teaser:nth-child(3n) {
     float: right;
     margin-right: 0;
   }
 }
 
-/* line 83, ../scss/main.scss */
-.sidebar-right {
-  height: 80vh;
-  background-color: rgba(100, 100, 30, 0.6);
-  clear: both;
-}
-@media (min-width: 720px) {
-  /* line 83, ../scss/main.scss */
-  .sidebar-right {
-    clear: none;
-    width: 24.05063%;
-    float: right;
-    margin-right: 0;
-  }
-}
-
-/* line 94, ../scss/main.scss */
+/* line 129, ../scss/main.scss */
 .footer {
-  height: 20vh;
+  height: 10vh;
   background-color: rgba(0, 30, 100, 0.6);
   clear: both;
+  display: block;
+}
+
+/* line 136, ../scss/main.scss */
+.header {
+  height: 10vh;
+  background-color: rgba(0, 30, 100, 0.6);
+  display: block;
 }

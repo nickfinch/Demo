@@ -3,7 +3,7 @@
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Inconsolata|Poppins");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700|Poppins:400,700");
 /* line 8, ../scss/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -480,19 +480,19 @@ a:hover {
   height: 70px;
 }
 @media (min-width: 710px) {
-  /* line 49, ../scss/main.scss */
+  /* line 48, ../scss/main.scss */
   .header .hamburger-mobile {
     display: none;
   }
 }
 @media (min-width: 320px) {
-  /* line 55, ../scss/main.scss */
+  /* line 54, ../scss/main.scss */
   .header .hamburger-tablet {
     display: none;
   }
 }
 @media (min-width: 710px) {
-  /* line 55, ../scss/main.scss */
+  /* line 54, ../scss/main.scss */
   .header .hamburger-tablet {
     width: 32.20339%;
     float: right;
@@ -502,27 +502,29 @@ a:hover {
   }
 }
 @media (min-width: 960px) {
-  /* line 55, ../scss/main.scss */
+  /* line 54, ../scss/main.scss */
   .header .hamburger-tablet {
     display: none;
   }
 }
-/* line 70, ../scss/main.scss */
-.header .logo {
-  width: 66.10169%;
-  float: left;
-  margin-right: 1.69492%;
-  font-family: "Poppins", sans-serif;
-  font-size: 3.2em;
-  font-weight: 700;
-  letter-spacing: -2px;
+@media (min-width: 960px) {
+  /* line 69, ../scss/main.scss */
+  .header .logo {
+    width: 66.10169%;
+    float: left;
+    margin-right: 1.69492%;
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -2px;
+  }
 }
-/* line 78, ../scss/main.scss */
+/* line 80, ../scss/main.scss */
 .header .nav {
   display: none;
 }
 @media (min-width: 960px) {
-  /* line 78, ../scss/main.scss */
+  /* line 80, ../scss/main.scss */
   .header .nav {
     width: 32.20339%;
     float: right;
@@ -530,14 +532,25 @@ a:hover {
     display: block;
     text-align: right;
   }
+  /* line 88, ../scss/main.scss */
+  .header .nav ul {
+    list-style-type: none;
+  }
+  /* line 90, ../scss/main.scss */
+  .header .nav ul li {
+    display: inline;
+    padding: 0px;
+    margin: 0 12px;
+    font-weight: 700;
+  }
 }
 
-/* line 92, ../scss/main.scss */
+/* line 103, ../scss/main.scss */
 .main {
   height: 80vh;
 }
 @media (min-width: 960px) {
-  /* line 92, ../scss/main.scss */
+  /* line 103, ../scss/main.scss */
   .main {
     width: 100%;
     float: left;
@@ -545,15 +558,15 @@ a:hover {
     margin-right: 0;
   }
 }
-/* line 99, ../scss/main.scss */
+/* line 110, ../scss/main.scss */
 .main .content {
   overflow: auto;
 }
-/* line 104, ../scss/main.scss */
+/* line 115, ../scss/main.scss */
 .main .content p {
   margin-top: 0;
 }
-/* line 109, ../scss/main.scss */
+/* line 120, ../scss/main.scss */
 .main .teaser {
   height: 16vh;
   background-color: rgba(100, 30, 100, 0.6);
@@ -571,20 +584,20 @@ a:hover {
   border-radius: 6px;
 }
 @media (min-width: 960px) {
-  /* line 109, ../scss/main.scss */
+  /* line 120, ../scss/main.scss */
   .main .teaser {
     width: 32.20339%;
     float: left;
     margin-right: 1.69492%;
   }
-  /* line 121, ../scss/main.scss */
+  /* line 132, ../scss/main.scss */
   .main .teaser:nth-child(3n) {
     float: right;
     margin-right: 0;
   }
 }
 
-/* line 129, ../scss/main.scss */
+/* line 140, ../scss/main.scss */
 .footer {
   height: 10vh;
   background-color: rgba(0, 30, 100, 0.6);
@@ -592,9 +605,9 @@ a:hover {
   display: block;
 }
 
-/* line 136, ../scss/main.scss */
-.header {
+/*.header {
   height: 10vh;
   background-color: rgba(0, 30, 100, 0.6);
   display: block;
 }
+*/

@@ -20,22 +20,11 @@ $susy: (
 @include border-box-sizing;
 
 
-$link-color: #330000;
-
-a {
-  color: $link-color;
-
-  &:hover {
-    color: lighten($link-color, 25%);
-  }
-}
-
-
-
 // This is a Suzy Mixin that defines the container width
 .container {
   @include container(1140px);
   font-family: $body-font;
+  color: $font-default-color;
 
 }
 
@@ -71,13 +60,13 @@ a {
     @include breakpoint($desktop-screen){
       @include span (8 of 12);  
       font-family: $header-font;
-      font-size: 32px;
+      font-size: 2em;
       font-weight: 700;
       letter-spacing: -2px;
     }
   }
 
-  .nav{
+  nav{
       display: none;      
 
       @include breakpoint($desktop-screen){
@@ -87,11 +76,30 @@ a {
 
           ul {
             list-style-type: none;
+            text-align: center;
+
             li{
               display:inline;
               padding: 0px;
-              margin: 0 12px;
+              margin: 0 0 0 25px;
               font-weight:700;
+              font-size: 1em;
+
+              a {
+                text-decoration: none;
+
+                @include transition-property(color);
+                @include transition-duration(.3s);
+                @include transition-timing-function(cubic-bezier(.25,.1,.25,1));
+                             
+                   &:visited{
+                    color: $font-default-color;
+                   }
+                   &:hover{
+                    color:#8cc9cd;
+
+                   }
+              }
             }
           }
     }
@@ -114,6 +122,16 @@ a {
 
     p {
       margin-top: 0;
+    }
+  }
+  
+  .filters {
+    button {
+      height:42px;
+      border-radius: 100px;
+      padding:0 45px;
+      background-color: rgba(255,255,255,100);
+      border: 3px solid $font-default-color;
     }
   }
 

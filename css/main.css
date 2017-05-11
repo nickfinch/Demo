@@ -527,7 +527,7 @@ textarea {
   /* line 77, ../scss/main.scss */
   .header nav ul {
     list-style-type: none;
-    text-align: center;
+    text-align: right;
   }
   /* line 81, ../scss/main.scss */
   .header nav ul li {
@@ -553,22 +553,22 @@ textarea {
     -webkit-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
-  /* line 95, ../scss/main.scss */
+  /* line 97, ../scss/main.scss */
   .header nav ul li a:visited {
     color: #262a2d;
   }
-  /* line 98, ../scss/main.scss */
+  /* line 101, ../scss/main.scss */
   .header nav ul li a:hover {
-    color: #8cc9cd;
+    color: #3482ea;
   }
 }
 
-/* line 111, ../scss/main.scss */
+/* line 114, ../scss/main.scss */
 .main {
   height: 80vh;
 }
 @media (min-width: 960px) {
-  /* line 111, ../scss/main.scss */
+  /* line 114, ../scss/main.scss */
   .main {
     width: 100%;
     float: left;
@@ -576,15 +576,20 @@ textarea {
     margin-right: 0;
   }
 }
-/* line 118, ../scss/main.scss */
+/* line 121, ../scss/main.scss */
 .main .content {
   overflow: auto;
 }
-/* line 123, ../scss/main.scss */
+/* line 126, ../scss/main.scss */
 .main .content p {
   margin-top: 0;
 }
-/* line 129, ../scss/main.scss */
+/* line 133, ../scss/main.scss */
+.main .filters .active {
+  background-color: #262a2d;
+  color: white;
+}
+/* line 137, ../scss/main.scss */
 .main .filters button {
   height: 42px;
   border-radius: 100px;
@@ -592,46 +597,51 @@ textarea {
   background-color: white;
   border: 3px solid #262a2d;
 }
-/* line 138, ../scss/main.scss */
+/* line 144, ../scss/main.scss */
+.main .filters button:focus {
+  outline: 0;
+}
+/* line 152, ../scss/main.scss */
 .main .teaser {
-  height: 16vh;
-  background-color: rgba(100, 30, 100, 0.6);
+  height: 245px;
+  background-color: #edc054;
   padding: 2.04082%;
   margin: 2vh 0;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  -moz-box-shadow: #551955 0 0 5px;
-  -webkit-box-shadow: #551955 0 0 5px;
-  box-shadow: #551955 0 0 5px;
+  background-size: cover !important;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
 }
 @media (min-width: 960px) {
-  /* line 138, ../scss/main.scss */
+  /* line 152, ../scss/main.scss */
   .main .teaser {
     width: 32.20339%;
     float: left;
     margin-right: 1.69492%;
+    font-family: "Poppins", sans-serif;
+    font-size: 2.875em;
+    font-weight: 700;
+    letter-spacing: -2px;
+    text-align: center;
+    padding-top: 85px;
+    color: white;
+    text-shadow: 0 2px 4px #000000;
   }
-  /* line 150, ../scss/main.scss */
+  /* line 173, ../scss/main.scss */
   .main .teaser:nth-child(3n) {
     float: right;
     margin-right: 0;
   }
 }
 
-/* line 158, ../scss/main.scss */
-.footer {
+/*
+.footer { 
   height: 10vh;
   background-color: rgba(0, 30, 100, 0.6);
   clear: both;
   display: block;
 }
-
-/*.header {
+.header {
   height: 10vh;
   background-color: rgba(0, 30, 100, 0.6);
   display: block;
